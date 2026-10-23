@@ -3,20 +3,39 @@ import React from 'react';
 
 export default function VistaEspecialista({ tareas }) {
     return (
-        <div>
-            <h2 className="mb-3 text-warning">Área de Especialistas</h2>
-            <h5 className="mb-3 text-secondary">Tareas Asignadas y Registro de Actividades</h5>
-            <ul className="list-group shadow-sm">
+        <div className="container py-2">
+            {/* Header del Especialista */}
+            <div className="p-4 mb-4 bg-white rounded-3 shadow-sm border-start border-5 border-warning">
+                <h2 className="fw-bold text-dark mb-1">
+                    <i className="bi bi-tools me-2 text-warning"></i>Espacio de Trabajo Técnico
+                </h2>
+                <p className="text-muted mb-0">Gestión individual de tareas, horas estimadas y entregables.</p>
+            </div>
+
+            {/* Listado en tarjetas / contenedores */}
+            <div className="row g-3">
                 {tareas.map((t) => (
-                    <li className="list-group-item d-flex justify-content-between align-items-center py-3" key={t.id}>
-                        <div>
-                            <strong>{t.tarea}</strong>
-                            <div className="text-muted small">Proyecto asociado: {t.proyecto} | Horas estimadas: {t.horas}h</div>
+                    <div className="col-12" key={t.id}>
+                        <div className="card border-0 shadow-sm p-3 rounded-3 bg-white">
+                            <div className="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                                <div>
+                                    <span className="badge bg-warning-subtle text-warning-emphasis mb-2">
+                                        <i className="bi bi-clock-history me-1"></i>{t.horas} horas estimadas
+                                    </span>
+                                    <h5 className="fw-bold text-dark mb-1">{t.tarea}</h5>
+                                    <p className="text-muted small mb-0">Proyecto: <strong>{t.proyecto}</strong></p>
+                                </div>
+                                <div>
+                                    <button className="btn btn-outline-primary btn-sm me-2">
+                                        <i className="bi bi-play-fill me-1"></i>Iniciar
+                                    </button>
+                                    <span className="badge bg-primary px-3 py-2">{t.estado}</span>
+                                </div>
+                            </div>
                         </div>
-                        <span className="badge bg-primary">{t.estado}</span>
-                    </li>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }
