@@ -3,11 +3,15 @@ import React from 'react';
 
 export default function Navbar({ onLogout }) {
     return (
-        <header className="d-flex justify-content-between align-items-center py-3 mb-4 border-bottom shadow-sm px-4 bg-white">
-            <span className="fs-4 fw-bold text-primary">CreativaMente</span>
-            <button className="btn btn-outline-danger btn-sm" onClick={onLogout}>
-                Cerrar Sesión
-            </button>
+        <header className="navbar navbar-expand-lg navbar-dark bg-dark px-4 shadow-sm mb-4">
+            <div className="container-fluid">
+                <span className="navbar-brand fw-bold text-info">
+                    <i className="bi bi-layers-fill me-2"></i>CreativaMente
+                </span>
+                <button className="btn btn-outline-light btn-sm px-3" onClick={onLogout}>
+                    <i className="bi bi-box-arrow-right me-1"></i>Cerrar Sesión
+                </button>
+            </div>
         </header>
     );
 }
