@@ -10,10 +10,10 @@ export default function VistaAdmin({ proyectos }) {
     const enEjecucion = proyectos.filter((p) => p.estado === 'En ejecución').length;
 
     const indicadores = [
-        { etiqueta: 'Proyectos activos', valor: `${proyectos.length} campañas`, nota: 'Registradas en la agencia', icono: 'bi-folder-check' },
-        { etiqueta: 'Presupuesto total', valor: aMoneda(total), nota: 'Suma de todos los proyectos', icono: 'bi-currency-dollar' },
-        { etiqueta: 'En ejecución', valor: `${enEjecucion} de ${proyectos.length}`, nota: 'Campañas en curso', icono: 'bi-activity' },
-        { etiqueta: 'Alertas', valor: '0 desviaciones', nota: 'Sin incidencias abiertas', icono: 'bi-exclamation-triangle' },
+        { etiqueta: 'Proyectos activos', valor: `${proyectos.length} campañas`, nota: 'Registradas en la agencia' },
+        { etiqueta: 'Presupuesto total', valor: aMoneda(total), nota: 'Suma de todos los proyectos' },
+        { etiqueta: 'En ejecución', valor: `${enEjecucion} de ${proyectos.length}`, nota: 'Campañas en curso' },
+        { etiqueta: 'Alertas', valor: '0 desviaciones', nota: 'Sin incidencias abiertas' },
     ];
 
     return (
@@ -21,13 +21,11 @@ export default function VistaAdmin({ proyectos }) {
             {/* Encabezado compacto con estado del sistema */}
             <div className="d-flex flex-wrap justify-content-between align-items-end gap-3 pb-3 mb-4 border-bottom">
                 <div>
-                    <h2 className="fw-bold mb-1">
-                        <i className="bi bi-shield-lock-fill me-2 text-primary"></i>Panel de Administración General
-                    </h2>
+                    <h2 className="fw-bold mb-1">Panel de Administración General</h2>
                     <p className="text-muted mb-0">Resumen financiero, auditoría de campañas y control de recursos.</p>
                 </div>
                 <span className="badge bg-success-subtle text-success border border-success px-3 py-2">
-                    <i className="bi bi-check-circle-fill me-2"></i>Sistema estable
+                    Sistema estable
                 </span>
             </div>
 
@@ -36,10 +34,7 @@ export default function VistaAdmin({ proyectos }) {
                 {indicadores.map((i) => (
                     <div className="col-sm-6 col-xl-3" key={i.etiqueta}>
                         <div className="card h-100 p-3">
-                            <div className="d-flex justify-content-between align-items-start mb-2">
-                                <span className="text-muted small fw-semibold text-uppercase">{i.etiqueta}</span>
-                                <i className={`bi ${i.icono} text-primary fs-5`}></i>
-                            </div>
+                            <span className="text-muted small fw-semibold text-uppercase mb-2">{i.etiqueta}</span>
                             <h3 className="fw-bold mb-1 fs-4">{i.valor}</h3>
                             <small className="text-muted">{i.nota}</small>
                         </div>
@@ -52,9 +47,7 @@ export default function VistaAdmin({ proyectos }) {
                 <div className="col-lg-8">
                     <div className="card h-100">
                         <div className="card-header bg-transparent py-3">
-                            <h5 className="fw-bold mb-0">
-                                <i className="bi bi-clipboard-data me-2 text-primary"></i>Auditoría de campañas
-                            </h5>
+                            <h5 className="fw-bold mb-0">Auditoría de campañas</h5>
                         </div>
                         <div className="table-responsive px-3 pb-3">
                             <table className="table table-hover align-middle mb-0">
@@ -92,9 +85,7 @@ export default function VistaAdmin({ proyectos }) {
                 <div className="col-lg-4">
                     <div className="card h-100">
                         <div className="card-header bg-transparent py-3">
-                            <h5 className="fw-bold mb-0">
-                                <i className="bi bi-pie-chart me-2 text-primary"></i>Distribución del presupuesto
-                            </h5>
+                            <h5 className="fw-bold mb-0">Distribución del presupuesto</h5>
                         </div>
                         <div className="card-body">
                             {proyectos.map((p) => {
