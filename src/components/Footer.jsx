@@ -8,7 +8,7 @@ export default function Footer() {
                 <div className="row g-4">
                     <div className="col-lg-5">
                         <div className="fw-bold fs-5 text-white mb-2">
-                            <i className="bi bi-layers-fill me-2" style={{ color: 'var(--cm-accent)' }}></i>CreativaMente
+                            <i className="bi bi-layers-fill me-2"></i>CreativaMente
                         </div>
                         <p className="cm-footer-legal mb-0">
                             Plataforma de gestión interna de proyectos y campañas de marketing.
@@ -32,7 +32,7 @@ export default function Footer() {
                         </ul>
                     </div>
                 </div>
-                <hr className="my-4" style={{ borderColor: 'var(--cm-border)', opacity: 1 }} />
+                <hr className="my-4" />
                 <p className="cm-footer-legal mb-0">© 2026 CreativaMente. Todos los derechos reservados.</p>
             </div>
         </footer>
